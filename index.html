@@ -50,7 +50,7 @@
         const row = document.createElement("tr");
         row.className = index % 2 === 0 ? "bg-gray-100" : "bg-white";
         row.innerHTML = `
-          <td class="border px-4 py-2"><a href='${entreprise.url}' targer='_blank'>${entreprise.nom}</a></td>
+          <td class="border px-4 py-2"><a href='${entreprise.url}' target='_blank'>${entreprise.nom}</a></td>
           <td class="border px-4 py-2">
             <input type="text" value="${entreprise.adresse}" placeholder="Adresse Complète" class="w-full p-1 border rounded" readonly>
           </td>

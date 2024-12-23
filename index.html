@@ -27,21 +27,21 @@
   <script>
     // JSON contenant les données des entreprises avec des champs préremplis
     const entreprises = [
-      { nom: "Rab tech", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "BFT group", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "PAC", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "bollore", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "SOBEBRA", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "ANIP", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "ASIN", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "pref Cotonou", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "soneb", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "sbin", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "planetech sarl", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "empire communication", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "hdc services", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "harnix", adresse: "", telephone: "", lettreEnvoyee: false },
-      { nom: "fif connect", adresse: "", telephone: "", lettreEnvoyee: false }
+      { nom: "Rab tech", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "BFT group", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "PAC", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "bollore", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "SOBEBRA", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "ANIP", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "ASIN", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "pref Cotonou", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "soneb", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "sbin", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "planetech sarl", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "empire communication", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "hdc services", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "harnix", url:"", adresse: "", telephone: "", lettreEnvoyee: false },
+      { nom: "fif connect", url:"", adresse: "", telephone: "", lettreEnvoyee: false }
     ];
 
     // Fonction pour générer les lignes du tableau
@@ -51,15 +51,15 @@
         const row = document.createElement("tr");
         row.className = index % 2 === 0 ? "bg-gray-100" : "bg-white";
         row.innerHTML = `
-          <td class="border px-4 py-2">${entreprise.nom}</td>
+          <td class="border px-4 py-2"><a href='${entreprise.url}' targer='_blank'>${entreprise.nom}</a></td>
           <td class="border px-4 py-2">
-            <input type="text" value="${entreprise.adresse}" placeholder="Adresse Complète" class="w-full p-1 border rounded">
+            <input type="text" value="${entreprise.adresse}" placeholder="Adresse Complète" class="w-full p-1 border rounded" readonly>
           </td>
           <td class="border px-4 py-2">
-            <input type="tel" value="${entreprise.telephone}" placeholder="Numéro de Téléphone" class="w-full p-1 border rounded">
+            <input type="tel" value="${entreprise.telephone}" placeholder="Numéro de Téléphone" class="w-full p-1 border rounded" readonly>
           </td>
           <td class="border px-4 py-2">
-            <input type="checkbox" ${entreprise.lettreEnvoyee ? "checked" : ""}>
+            <input type="checkbox" ${entreprise.lettreEnvoyee ? "checked" : ""} readonly>
           </td>
         `;
         tableBody.appendChild(row);

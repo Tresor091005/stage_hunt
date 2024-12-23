@@ -55,7 +55,7 @@
             <input type="text" value="${entreprise.adresse}" placeholder="Adresse Complète" class="w-full p-1 border rounded" readonly>
           </td>
           <td class="border px-4 py-2">
-            <input type="tel" value="${entreprise.telephone}" placeholder="Numéro de Téléphone" class="w-full p-1 border rounded" readonly>
+            <a href="https://wa.me/229${entreprise.telephone}">${entreprise.telephone}</a>
           </td>
           <td class="border px-4 py-2">
             <input type="checkbox" ${entreprise.lettreEnvoyee ? "checked" : ""} readonly>
